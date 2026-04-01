@@ -63,10 +63,11 @@ const checkout = async (req, res) => {
       cancel_url: `https://example.com/error`,
     });
 
-    res.redirect(303, session.url);
     console.log(session.url);
+    res.redirect(303, session.url);
 
     // online-payment ???
+    res.status(200).send({ success: "order placed successfully..!" });
   } catch (error) {
     res.status(500).send({ error: "500 || internal server error..!" });
     console.log(
