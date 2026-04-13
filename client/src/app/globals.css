@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+
+  /* ✅ subtle shadow for light mode (dark text) */
+  --text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.432);
+}
+
+.container {
+  margin: 0 auto;
+}
+
+/* ✅ dark mode override controlled by class on <html> */
+html.dark {
+  --background: #0a0a0a;
+  --foreground: #ededed;
+
+  /* ✅ subtle glow shadow for dark mode (light text) */
+  --text-shadow: 0px 1px 2px rgba(255, 255, 255, 0.459);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-jakarta), sans-serif;
+}
+
+/* ✅ Text Shadow Utility Class */
+.text-shadow {
+  text-shadow: var(--text-shadow);
+}
+
+/* Hide scrollbar for Chrome, Safari and Edge */
+::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+html {
+  scrollbar-width: none;
+}
+
+/* Hide scrollbar for IE / old Edge */
+body {
+  -ms-overflow-style: none;
+}
+
+a {
+  display: inline-block;
+}
+
+.button-shadow {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.nav-shadow {
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+}
+
+.parallax {
+  background-image: url("/parallax.webp");
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* ===== Premium Splide Pagination ===== */
+
+.splide__pagination {
+  position: static !important;
+  margin-top: 68px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+/* base dot */
+.splide__pagination__page {
+  width: 8px;
+  height: 8px;
+  margin-top: 68px;
+  border-radius: 9999px;
+  background-color: hsl(var(--foreground) / 0.25);
+  opacity: 1;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* hover */
+.splide__pagination__page:hover {
+  background-color: hsl(var(--foreground) / 0.5);
+}
+
+/* active pill */
+.splide__pagination__page.is-active {
+  width: 26px;
+  border-radius: 9999px;
+  background-color: hsl(var(--foreground));
+  transform: none;
+}
