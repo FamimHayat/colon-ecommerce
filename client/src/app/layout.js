@@ -1,11 +1,12 @@
 import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
-import Providers from "./(components)/utils/ThemeProvider";
-import Navbar from "./(components)/nav/NavBar";
-import BackToTop from "./(components)/utils/BackToTop";
-import Parallax from "./(components)/home/Parallax";
-import Footer from "./(components)/utils/Footer";
-import AcceptCookies from "./(components)/utils/AcceptCookies";
+import Providers from "@/components/utils/ThemeProvider";
+import Navbar from "@/components/nav/NavBar";
+import AcceptCookies from "@/components/utils/AcceptCookies";
+import BackToTop from "@/components/utils/BackToTop";
+
+import Footer from "@/components/utils/Footer";
+import Parallax from "@/components/home/Parallax";
 
 // Jakarta Font Setup
 const jakarta = Plus_Jakarta_Sans({

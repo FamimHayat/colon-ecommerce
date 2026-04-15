@@ -9,7 +9,7 @@ export default function BrandButton({
     <button
       type={type}
       disabled={disabled}
-      className={`relative inline-block overflow-hidden border border-background px-6 py-3 font-medium text-foreground text-xl transition-colors duration-200 cursor-pointer group disabled:opacity-50 ${className}`}
+      className={`relative inline-block overflow-hidden border border-foreground px-6 py-3 font-medium text-foreground text-xl transition-colors duration-200 cursor-pointer group disabled:opacity-50 ${className}`}
     >
       <span
         className="absolute -inset-[120%] z-0 bg-foreground origin-bottom-left scale-x-0 transition-transform duration-200 ease-out lg:group-hover:scale-x-100"
